@@ -4,6 +4,8 @@ from acp_sdk.client import Client
 import asyncio
 from colorama import Fore 
 
+# Here we are using each of our different servers in sequence, using the output from the crewai agent as input to the smolagent
+
 async def run_hospital_workflow() -> None:
     async with Client(base_url="http://localhost:8001") as insurer, Client(base_url="http://localhost:8000") as hospital:
         run1 = await hospital.run_sync(
