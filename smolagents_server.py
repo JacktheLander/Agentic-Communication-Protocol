@@ -3,9 +3,6 @@ from acp_sdk.models import Message, MessagePart
 from acp_sdk.server import Context, RunYield, RunYieldResume, Server
 from smolagents import CodeAgent, DuckDuckGoSearchTool, LiteLLMModel, VisitWebpageTool
 import logging 
-from dotenv import load_dotenv
-
-load_dotenv() 
 
 server = Server()
 
