@@ -22,6 +22,14 @@ async def health_agent(input: list[Message], context: Context) -> AsyncGenerator
 
     yield Message(parts=[MessagePart(content=str(response))])
 
+
+server_parameters = StdioServerParameters(
+    command="uv",
+    args=["run", "mcpserver.py"],
+    env=None,
+)
+
+## This agent will run with tools from the MCP server
 @server.agent()
 async def doctor_agent(input: list[Message]) -> AsyncGenerator[RunYield, RunYieldResume]:
     "This is a Doctor Agent which helps users find doctors near them."
