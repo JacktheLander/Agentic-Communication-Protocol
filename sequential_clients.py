@@ -18,3 +18,5 @@ async def run_hospital_workflow() -> None:
             agent="policy_agent", input=f"Context: {content} What is the waiting period for rehabilitation?"
         )
         print(Fore.YELLOW + run2.output[0].parts[0].content + Fore.RESET)
+        
+asyncio.run(run_hospital_workflow())
